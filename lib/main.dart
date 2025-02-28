@@ -50,6 +50,7 @@ class _ShortsScreenState extends State<ShortsScreen> {
       'profileName': '@RamRaju',
       'caption': 'happy sunday',
       'additems':'10K',
+      'image':'assets/image/1.jpg',
     },
     {
       'color': Colors.blue,
@@ -60,6 +61,7 @@ class _ShortsScreenState extends State<ShortsScreen> {
       'profileName': '@RaviKumar',
       'caption': 'sky is looking good ',
       'additems':'9K',
+      'image':'assets/image/2.jpg',
     },
     {
       'color': Colors.green,
@@ -70,6 +72,7 @@ class _ShortsScreenState extends State<ShortsScreen> {
       'profileName': '@sai',
       'caption': 'planets are looking nice',
       'additems':'19K',
+      'image':'assets/image/3.jpg',
     },
     {
       'color': Colors.yellow,
@@ -80,6 +83,7 @@ class _ShortsScreenState extends State<ShortsScreen> {
       'profileName': '@Sunny',
       'caption': 'Bright colors ️',
       'additems':'15K',
+      'image':'assets/image/4.jpg',
     },
     {
       'color': Colors.purple,
@@ -90,6 +94,7 @@ class _ShortsScreenState extends State<ShortsScreen> {
       'profileName': '@PurpleDreams',
       'caption': 'Dream big',
       'additems':'20K',
+      'image':'assets/image/5.jpg',
     },
   ];
 
@@ -99,10 +104,7 @@ class _ShortsScreenState extends State<ShortsScreen> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text(
-          "Shorts",
-          style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
-        ),
+        title: Text("Shorts", style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),),
         actions: [
           Icon(Icons.search_rounded, size: 25, color: Colors.white),
           SizedBox(width: 20),
@@ -117,7 +119,15 @@ class _ShortsScreenState extends State<ShortsScreen> {
           final data = shortsData[index];
           return Stack(
             children: [
-              Container(color: data['color']
+              Container(color: data['color'],
+          child: Center(
+          child: Image.network(
+            data['image'],
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+          ),
               ),
           Positioned(
             top: 40,
